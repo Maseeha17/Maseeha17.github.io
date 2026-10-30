@@ -1,0 +1,380 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maseeha Aziz | Digital Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f9fa;
+            color: #09243b;
+            line-height: 1.7;
+        }
+
+        :root {
+            --navy: #09243b;
+            --teal: #38c8c1;
+            --white: #ffffff;
+            --light: #eaf6f6;
+        }
+
+        header {
+            background: var(--navy);
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: var(--teal);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: var(--teal);
+        }
+
+        .hero {
+            background: var(--navy);
+            color: white;
+            padding: 100px 8%;
+            min-height: 420px;
+        }
+
+        .hero .intro {
+            color: var(--teal);
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 60px);
+            margin: 10px 0;
+        }
+
+        .hero h2 {
+            color: var(--teal);
+            font-size: 23px;
+            font-weight: normal;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 20px 0;
+            color: #d4e1e9;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--teal);
+            color: var(--navy);
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 8px 8px 0 0;
+        }
+
+        .btn:hover {
+            background: white;
+        }
+
+        section {
+            padding: 65px 8%;
+        }
+
+        .section-title {
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+
+        .section-title span {
+            color: #159f9b;
+        }
+
+        .about {
+            background: white;
+        }
+
+        .about p {
+            max-width: 850px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .skill {
+            background: var(--light);
+            border: 1px solid #c5e8e6;
+            padding: 10px 17px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .projects {
+            background: #f5f9fa;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border-bottom: 4px solid var(--teal);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            margin: 10px 0;
+        }
+
+        .project-card p {
+            font-size: 14px;
+            color: #536574;
+            margin-bottom: 15px;
+        }
+
+        .project-card a {
+            color: #078c88;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .interests {
+            background: white;
+        }
+
+        .contact {
+            background: var(--navy);
+            color: white;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact p {
+            margin: 12px 0;
+        }
+
+        .contact a {
+            color: var(--teal);
+            text-decoration: none;
+        }
+
+        footer {
+            background: #061a2a;
+            color: #c5d5df;
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                gap: 12px;
+            }
+
+            nav {
+                width: 100%;
+            }
+
+            nav a {
+                margin: 0 12px 0 0;
+            }
+
+            .hero {
+                padding: 65px 7%;
+            }
+
+            section {
+                padding: 50px 7%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">MA.</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HOME SECTION -->
+<div class="hero" id="home">
+    <p class="intro">HELLO, I'M</p>
+
+    <h1>Maseeha Aziz.</h1>
+
+    <h2>Application Development Student</h2>
+
+    <p>
+        I am passionate about technology, information systems,
+        problem-solving and creating practical digital solutions.
+        Welcome to my personal portfolio!
+    </p>
+
+    <a href="#projects" class="btn">Explore My Projects</a>
+
+    <a href="#contact" class="btn">Get In Touch</a>
+</div>
+
+<!-- ABOUT SECTION -->
+<section class="about" id="about">
+    <h2 class="section-title">About <span>Me</span></h2>
+
+    <p>
+        I am a Bachelor of Computer and Information Sciences
+        in Application Development student at Emeris.
+
+        Through academic and personal projects, I have gained
+        experience exploring application development, user
+        interfaces, information systems and technology-based
+        problem-solving.
+
+        I am interested in opportunities where I can combine
+        technology, organisation, communication and analytical
+        thinking to support business and IT environments.
+    </p>
+
+    <div class="skills">
+        <span class="skill">HTML & CSS</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">C#</span>
+        <span class="skill">ASP.NET Core</span>
+        <span class="skill">React</span>
+        <span class="skill">Figma</span>
+        <span class="skill">Canva</span>
+        <span class="skill">GitHub</span>
+        <span class="skill">Microsoft Office</span>
+    </div>
+</section>
+
+<!-- PROJECTS SECTION -->
+<section class="projects" id="projects">
+    <h2 class="section-title">My <span>Projects</span></h2>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+            <h3>🤖 ChatBot</h3>
+            <p>A chatbot project exploring conversational interaction.</p>
+            <a href="https://github.com/Maseeha17/My-Projects/tree/main/ChatBot"
+               target="_blank">View Project →</a>
+        </div>
+
+        <div class="project-card">
+            <h3>💬 ChatbotGUI</h3>
+            <p>A chatbot project featuring a graphical user interface.</p>
+            <a href="https://github.com/Maseeha17/My-Projects/tree/main/ChatbotGUI"
+               target="_blank">View Project →</a>
+        </div>
+
+        <div class="project-card">
+            <h3>🎮 DailyLifeGuessGame</h3>
+            <p>An interactive guessing game project.</p>
+            <a href="https://github.com/Maseeha17/My-Projects/tree/main/DailyLifeGuessGame"
+               target="_blank">View Project →</a>
+        </div>
+
+        <div class="project-card">
+            <h3>🕹️ GameScriptManager</h3>
+            <p>A project exploring game script organisation and management.</p>
+            <a href="https://github.com/Maseeha17/My-Projects/tree/main/GameScriptManager"
+               target="_blank">View Project →</a>
+        </div>
+
+        <div class="project-card">
+            <h3>❓ Q&A Game</h3>
+            <p>An interactive question-and-answer game.</p>
+            <a href="https://github.com/Maseeha17/My-Projects/tree/main/Q%26A%20Game"
+               target="_blank">View Project →</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- CAREER INTERESTS -->
+<section class="interests">
+    <h2 class="section-title">Career <span>Interests</span></h2>
+
+    <div class="skills">
+        <span class="skill">Business Analysis</span>
+        <span class="skill">Systems Analysis</span>
+        <span class="skill">IT Administration</span>
+        <span class="skill">Application Support</span>
+        <span class="skill">Information Systems</span>
+    </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact" id="contact">
+    <h2 class="section-title">Let's <span>Connect</span></h2>
+
+    <p>I'd love to connect with industry professionals and
+       explore opportunities to grow within the IT industry.</p>
+
+    <p>📧 Email:
+        <a href="mailto:azizmaseeha717@gmail.com">
+            azizmaseeha717@gmail.com
+        </a>
+    </p>
+
+    <p>📱 Phone: 072 737 7862</p>
+
+    <p>💻 GitHub:
+        <a href="https://github.com/Maseeha17" target="_blank">
+            github.com/Maseeha17
+        </a>
+    </p>
+</section>
+
+<footer>
+    <p>© 2026 Maseeha Aziz | Personal Digital Portfolio</p>
+    <p>Designed with purpose. Built with passion.</p>
+</footer>
+
+</body>
+</html>
