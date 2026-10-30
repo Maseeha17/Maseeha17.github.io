@@ -4,9 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Maseeha Aziz's professional portfolio, education, skills and projects.">
     <title>Maseeha Aziz | Digital Portfolio</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
     <style>
+        :root {
+            --green: #203B32;
+            --green-light: #315D4D;
+            --gold: #C5AA73;
+            --ivory: #F7F5EF;
+            --white: #FFFFFF;
+            --text: #28352F;
+            --muted: #737D76;
+            --border: #E5E4DC;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -15,215 +31,790 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background: #f5f9fa;
-            color: #09243b;
+            font-family: 'DM Sans', sans-serif;
+            background: var(--ivory);
+            color: var(--text);
             line-height: 1.7;
         }
 
-        :root {
-            --navy: #09243b;
-            --teal: #38c8c1;
-            --white: #ffffff;
-            --light: #eaf6f6;
+        a {
+            text-decoration: none;
+            color: inherit;
         }
 
+        .container {
+            width: min(1100px, 90%);
+            margin: auto;
+        }
+
+        section {
+            padding: 95px 0;
+            scroll-margin-top: 75px;
+        }
+
+        .section-label {
+            color: var(--green-light);
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 46px);
+            color: var(--green);
+            line-height: 1.2;
+            margin-bottom: 18px;
+        }
+
+        .section-intro {
+            color: var(--muted);
+            max-width: 650px;
+            margin-bottom: 42px;
+        }
+
+        /* NAVIGATION */
+
         header {
-            background: var(--navy);
-            color: white;
-            padding: 18px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(247, 245, 239, 0.96);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav {
+            min-height: 76px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
+            justify-content: space-between;
         }
 
         .logo {
+            font-family: 'Playfair Display', serif;
+            color: var(--green);
             font-size: 25px;
-            font-weight: bold;
-            color: var(--teal);
+            font-weight: 700;
         }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 14px;
+        .logo span {
+            color: var(--gold);
         }
 
-        nav a:hover {
-            color: var(--teal);
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
         }
+
+        .nav-links a {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text);
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--green-light);
+        }
+
+        .nav-contact {
+            background: var(--green);
+            color: white !important;
+            padding: 11px 19px;
+            border-radius: 5px;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 27px;
+            color: var(--green);
+            cursor: pointer;
+        }
+
+        /* HERO */
 
         .hero {
-            background: var(--navy);
+            background: var(--green);
             color: white;
-            padding: 100px 8%;
-            min-height: 420px;
+            min-height: 590px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .hero .intro {
-            color: var(--teal);
-            font-weight: bold;
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 430px;
+            height: 430px;
+            border: 1px solid rgba(197, 170, 115, 0.3);
+            border-radius: 50%;
+            right: -100px;
+            top: 70px;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border: 1px solid rgba(197, 170, 115, 0.2);
+            border-radius: 50%;
+            right: -35px;
+            top: 135px;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.5fr 0.8fr;
+            align-items: center;
+            gap: 60px;
+            position: relative;
+            z-index: 1;
+            padding: 85px 0;
+        }
+
+        .hero-tag {
+            color: var(--gold);
+            font-size: 12px;
+            text-transform: uppercase;
             letter-spacing: 3px;
+            font-weight: 700;
+            margin-bottom: 20px;
         }
 
         .hero h1 {
-            font-size: clamp(38px, 6vw, 60px);
-            margin: 10px 0;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(44px, 6vw, 70px);
+            line-height: 1.1;
+            margin-bottom: 22px;
         }
 
-        .hero h2 {
-            color: var(--teal);
-            font-size: 23px;
-            font-weight: normal;
+        .hero h1 span {
+            color: var(--gold);
         }
 
-        .hero p {
-            max-width: 650px;
-            margin: 20px 0;
-            color: #d4e1e9;
+        .hero-description {
+            color: #D5DED8;
+            max-width: 570px;
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
         }
 
         .btn {
             display: inline-block;
-            background: var(--teal);
-            color: var(--navy);
-            padding: 12px 24px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 8px 8px 0 0;
+            padding: 13px 23px;
+            border-radius: 5px;
+            font-size: 13px;
+            font-weight: 700;
+            transition: 0.3s;
+            border: 1px solid transparent;
         }
 
-        .btn:hover {
+        .btn-gold {
+            background: var(--gold);
+            color: var(--green);
+        }
+
+        .btn-gold:hover {
+            background: #D6BD8C;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border-color: rgba(255,255,255,0.5);
+            color: white;
+        }
+
+        .btn-outline:hover {
             background: white;
+            color: var(--green);
         }
 
-        section {
-            padding: 65px 8%;
-        }
-
-        .section-title {
-            font-size: 30px;
-            margin-bottom: 25px;
-        }
-
-        .section-title span {
-            color: #159f9b;
-        }
-
-        .about {
-            background: white;
-        }
-
-        .about p {
-            max-width: 850px;
-        }
-
-        .skills {
+        .hero-card {
+            width: 250px;
+            height: 280px;
+            margin: auto;
+            border: 1px solid rgba(197, 170, 115, 0.7);
             display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 20px;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: rgba(255,255,255,0.04);
         }
 
-        .skill {
-            background: var(--light);
-            border: 1px solid #c5e8e6;
-            padding: 10px 17px;
-            border-radius: 20px;
+        .hero-card::before {
+            content: "";
+            position: absolute;
+            inset: 12px;
+            border: 1px solid rgba(197, 170, 115, 0.35);
+        }
+
+        .hero-initials {
+            font-family: 'Playfair Display', serif;
+            font-size: 100px;
+            color: var(--gold);
+        }
+
+        .hero-card-caption {
+            position: absolute;
+            bottom: -36px;
+            color: #D5DED8;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 65px;
+            align-items: center;
+        }
+
+        .about-visual {
+            background: var(--green);
+            min-height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 30px;
+        }
+
+        .about-visual-inner {
+            border: 1px solid var(--gold);
+            width: 100%;
+            height: 290px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .about-visual-inner strong {
+            font-family: 'Playfair Display', serif;
+            font-size: 75px;
+            color: var(--gold);
+        }
+
+        .about-visual-inner span {
+            color: white;
+            letter-spacing: 3px;
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+
+        .about-text p {
+            color: var(--muted);
+            margin-bottom: 17px;
+        }
+
+        .about-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 27px;
+        }
+
+        .detail {
+            border-left: 3px solid var(--gold);
+            padding-left: 13px;
+        }
+
+        .detail small {
+            display: block;
+            color: var(--muted);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .detail strong {
+            color: var(--green);
             font-size: 14px;
         }
 
-        .projects {
-            background: #f5f9fa;
+        /* EDUCATION */
+
+        .education {
+            background: white;
         }
 
-        .project-grid {
+        .education-card {
+            background: var(--ivory);
+            border: 1px solid var(--border);
+            padding: 32px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .education-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 16px;
+        }
+
+        .education-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 25px;
+            color: var(--green);
+        }
+
+        .education-card h4 {
+            color: var(--green-light);
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .year {
+            background: var(--green);
+            color: white;
+            padding: 7px 13px;
+            border-radius: 4px;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        .education-card p {
+            color: var(--muted);
+            font-size: 14px;
+            margin: 15px 0;
+        }
+
+        .tag-heading {
+            font-size: 12px;
+            color: var(--green);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 800;
+            margin: 23px 0 12px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+        }
+
+        .tag {
+            background: white;
+            border: 1px solid #DEDCD1;
+            color: var(--green);
+            padding: 8px 13px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .module-tag {
+            background: #E9EEE9;
+            border-color: #D5E0D7;
+        }
+
+        .education-note {
+            font-size: 12px !important;
+            font-style: italic;
+        }
+
+        /* SKILLS */
+
+        .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
         }
 
-        .project-card {
+        .skill-card {
             background: white;
-            padding: 25px;
-            border-radius: 12px;
-            border-bottom: 4px solid var(--teal);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
+            padding: 27px;
+            border: 1px solid var(--border);
+            border-radius: 7px;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+
+        .skill-icon {
+            font-size: 27px;
+            margin-bottom: 13px;
+        }
+
+        .skill-card h3 {
+            color: var(--green);
+            font-family: 'Playfair Display', serif;
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            background: white;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .project-card {
+            border: 1px solid var(--border);
+            padding: 29px;
+            border-radius: 7px;
+            transition: 0.3s;
+            background: var(--ivory);
+            display: flex;
+            flex-direction: column;
         }
 
         .project-card:hover {
             transform: translateY(-5px);
+            border-color: var(--gold);
+            box-shadow: 0 12px 30px rgba(32,59,50,0.07);
+        }
+
+        .project-number {
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 31px;
+            margin-bottom: 10px;
         }
 
         .project-card h3 {
-            margin: 10px 0;
+            color: var(--green);
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            margin-bottom: 10px;
         }
 
         .project-card p {
-            font-size: 14px;
-            color: #536574;
-            margin-bottom: 15px;
+            color: var(--muted);
+            font-size: 13px;
+            margin-bottom: 20px;
+            flex-grow: 1;
         }
 
-        .project-card a {
-            color: #078c88;
-            font-weight: bold;
-            text-decoration: none;
+        .project-link {
+            color: var(--green-light);
+            font-size: 13px;
+            font-weight: 800;
         }
+
+        .project-link:hover {
+            color: #9B7B3E;
+        }
+
+        .github-all {
+            margin-top: 35px;
+            text-align: center;
+        }
+
+        /* CAREER INTERESTS */
 
         .interests {
-            background: white;
+            background: var(--green);
+            color: white;
         }
+
+        .interests .section-label {
+            color: var(--gold);
+        }
+
+        .interests .section-title {
+            color: white;
+        }
+
+        .interests .section-intro {
+            color: #D5DED8;
+        }
+
+        .interest-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .interest-card {
+            padding: 24px 17px;
+            border: 1px solid rgba(197,170,115,0.45);
+            background: rgba(255,255,255,0.04);
+            min-height: 125px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .interest-card:hover {
+            background: var(--gold);
+            color: var(--green);
+        }
+
+        /* CV */
+
+        .cv-section {
+            background: #EEECE3;
+        }
+
+        .cv-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 45px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .cv-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--green);
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .cv-card p {
+            color: var(--muted);
+            max-width: 600px;
+            font-size: 14px;
+        }
+
+        .cv-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            min-width: 150px;
+        }
+
+        .cv-buttons .btn {
+            text-align: center;
+        }
+
+        .cv-note {
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 13px;
+        }
+
+        /* CONTACT */
 
         .contact {
-            background: var(--navy);
-            color: white;
+            background: white;
+            text-align: center;
         }
 
-        .contact .section-title {
-            color: white;
+        .contact .section-intro {
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .contact p {
-            margin: 12px 0;
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
         }
 
-        .contact a {
-            color: var(--teal);
-            text-decoration: none;
+        .contact-item {
+            padding: 17px 22px;
+            background: var(--ivory);
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            font-size: 13px;
+            color: var(--green);
+            font-weight: 600;
+        }
+
+        .contact-item:hover {
+            border-color: var(--gold);
         }
 
         footer {
-            background: #061a2a;
-            color: #c5d5df;
+            background: #172D25;
+            color: #D5DED8;
+            padding: 28px 0;
             text-align: center;
-            padding: 20px;
-            font-size: 13px;
+            font-size: 12px;
         }
 
-        @media (max-width: 600px) {
-            header {
-                gap: 12px;
+        footer span {
+            color: var(--gold);
+        }
+
+        /* SCROLL ANIMATION */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* RESPONSIVE DESIGN */
+
+        @media (max-width: 850px) {
+            .nav-links {
+                gap: 13px;
             }
 
-            nav {
+            .nav-links a {
+                font-size: 11px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-card {
+                display: none;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-visual {
+                min-height: 270px;
+            }
+
+            .about-visual-inner {
+                height: 220px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .interest-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cv-card {
+                grid-template-columns: 1fr;
+            }
+
+            .cv-buttons {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 76px;
+                left: 0;
                 width: 100%;
+                padding: 22px 5%;
+                background: var(--ivory);
+                border-bottom: 1px solid var(--border);
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 17px;
             }
 
-            nav a {
-                margin: 0 12px 0 0;
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                font-size: 14px;
             }
 
             .hero {
-                padding: 65px 7%;
+                min-height: 540px;
+            }
+
+            .hero-content {
+                padding: 65px 0;
             }
 
             section {
-                padding: 50px 7%;
+                padding: 70px 0;
+            }
+
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .education-card {
+                padding: 23px;
+            }
+
+            .education-top {
+                flex-direction: column;
+            }
+
+            .about-details {
+                grid-template-columns: 1fr;
+            }
+
+            .cv-card {
+                padding: 27px;
+            }
+
+            .contact-details {
+                flex-direction: column;
+            }
+
+            .contact-item {
+                overflow-wrap: anywhere;
             }
         }
     </style>
@@ -231,150 +822,552 @@
 
 <body>
 
-<header>
-    <div class="logo">MA.</div>
+    <!-- NAVIGATION -->
+    <header>
+        <nav class="container">
+            <a href="#home" class="logo">MA<span>.</span></a>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+            <button class="menu-toggle" id="menuToggle"
+                aria-label="Toggle navigation" aria-expanded="false">
+                ☰
+            </button>
 
-<!-- HOME SECTION -->
-<div class="hero" id="home">
-    <p class="intro">HELLO, I'M</p>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#cv">My CV</a></li>
+                <li><a href="#contact" class="nav-contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <h1>Maseeha Aziz.</h1>
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
 
-    <h2>Application Development Student</h2>
+            <div>
+                <p class="hero-tag">Welcome to my digital portfolio</p>
 
-    <p>
-        I am passionate about technology, information systems,
-        problem-solving and creating practical digital solutions.
-        Welcome to my personal portfolio!
-    </p>
+                <h1>Hello, I'm<br><span>Maseeha Aziz.</span></h1>
 
-    <a href="#projects" class="btn">Explore My Projects</a>
+                <p class="hero-description">
+                    A final-year Bachelor of Computer and Information
+                    Sciences in Application Development student with an
+                    interest in technology, business processes and
+                    information systems.
+                </p>
 
-    <a href="#contact" class="btn">Get In Touch</a>
-</div>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-gold">Explore My Work</a>
+                    <a href="#about" class="btn btn-outline">Get to Know Me</a>
+                </div>
+            </div>
 
-<!-- ABOUT SECTION -->
-<section class="about" id="about">
-    <h2 class="section-title">About <span>Me</span></h2>
+            <div class="hero-card">
+                <div class="hero-initials">MA</div>
+                <div class="hero-card-caption">Technology · Business · Growth</div>
+            </div>
 
-    <p>
-        I am a Bachelor of Computer and Information Sciences
-        in Application Development student at Emeris.
-
-        Through academic and personal projects, I have gained
-        experience exploring application development, user
-        interfaces, information systems and technology-based
-        problem-solving.
-
-        I am interested in opportunities where I can combine
-        technology, organisation, communication and analytical
-        thinking to support business and IT environments.
-    </p>
-
-    <div class="skills">
-        <span class="skill">HTML & CSS</span>
-        <span class="skill">JavaScript</span>
-        <span class="skill">C#</span>
-        <span class="skill">ASP.NET Core</span>
-        <span class="skill">React</span>
-        <span class="skill">Figma</span>
-        <span class="skill">Canva</span>
-        <span class="skill">GitHub</span>
-        <span class="skill">Microsoft Office</span>
-    </div>
-</section>
-
-<!-- PROJECTS SECTION -->
-<section class="projects" id="projects">
-    <h2 class="section-title">My <span>Projects</span></h2>
-
-    <div class="project-grid">
-
-        <div class="project-card">
-            <h3>🤖 ChatBot</h3>
-            <p>A chatbot project exploring conversational interaction.</p>
-            <a href="https://github.com/Maseeha17/My-Projects/tree/main/ChatBot"
-               target="_blank">View Project →</a>
         </div>
+    </section>
 
-        <div class="project-card">
-            <h3>💬 ChatbotGUI</h3>
-            <p>A chatbot project featuring a graphical user interface.</p>
-            <a href="https://github.com/Maseeha17/My-Projects/tree/main/ChatbotGUI"
-               target="_blank">View Project →</a>
+    <!-- ABOUT ME -->
+    <section id="about">
+        <div class="container about-grid">
+
+            <div class="about-visual reveal">
+                <div class="about-visual-inner">
+                    <strong>MA.</strong>
+                    <span>About Me</span>
+                </div>
+            </div>
+
+            <div class="about-text reveal">
+                <p class="section-label">A little about me</p>
+                <h2 class="section-title">Getting to know Maseeha</h2>
+
+                <p>
+                    My name is Maseeha Aziz, and I am a final-year
+                    Bachelor of Computer and Information Sciences in
+                    Application Development student at Emeris.
+                </p>
+
+                <p>
+                    My academic journey has allowed me to explore
+                    application development, systems analysis,
+                    information systems, databases, security and
+                    project management.
+                </p>
+
+                <p>
+                    I enjoy understanding how technology can solve
+                    everyday business challenges and improve the way
+                    organisations operate. I am particularly interested
+                    in roles that bring together technology, people,
+                    processes and problem-solving.
+                </p>
+
+                <p>
+                    Outside my studies, I have gained administrative
+                    experience through my work at Exclusive Distributors,
+                    where I have been involved in order processing,
+                    data capturing, invoicing and payment reconciliation.
+                </p>
+
+                <div class="about-details">
+                    <div class="detail">
+                        <small>Qualification</small>
+                        <strong>Bachelor of Computer and Information Sciences</strong>
+                    </div>
+
+                    <div class="detail">
+                        <small>Institution</small>
+                        <strong>Emeris</strong>
+                    </div>
+
+                    <div class="detail">
+                        <small>Location</small>
+                        <strong>Durban, South Africa</strong>
+                    </div>
+
+                    <div class="detail">
+                        <small>Career interests</small>
+                        <strong>Business & Information Systems</strong>
+                    </div>
+                </div>
+            </div>
+
         </div>
+    </section>
 
-        <div class="project-card">
-            <h3>🎮 DailyLifeGuessGame</h3>
-            <p>An interactive guessing game project.</p>
-            <a href="https://github.com/Maseeha17/My-Projects/tree/main/DailyLifeGuessGame"
-               target="_blank">View Project →</a>
+    <!-- EDUCATION -->
+    <section class="education" id="education">
+        <div class="container">
+
+            <p class="section-label">My academic journey</p>
+            <h2 class="section-title">Education & Qualifications</h2>
+
+            <p class="section-intro">
+                My educational background has helped me develop a
+                foundation in business, accounting, technology and
+                application development.
+            </p>
+
+            <!-- SCHOOL -->
+            <div class="education-card reveal">
+                <div class="education-top">
+                    <div>
+                        <h3>Verulam Islamic School</h3>
+                        <h4>National Senior Certificate (Matric)</h4>
+                    </div>
+
+                    <span class="year">2011 – 2023</span>
+                </div>
+
+                <p>
+                    Completed my schooling and obtained my National
+                    Senior Certificate, developing a foundation in
+                    business, financial literacy, communication
+                    and the sciences.
+                </p>
+
+                <div class="tag-heading">Matric subjects</div>
+
+                <div class="tags">
+                    <span class="tag">Mathematical Literacy</span>
+                    <span class="tag">English Home Language</span>
+                    <span class="tag">Afrikaans First Additional Language</span>
+                    <span class="tag">Life Orientation</span>
+                    <span class="tag">Business Studies</span>
+                    <span class="tag">Accounting</span>
+                    <span class="tag">Life Sciences</span>
+                </div>
+            </div>
+
+            <!-- UNIVERSITY -->
+            <div class="education-card reveal">
+                <div class="education-top">
+                    <div>
+                        <h3>Emeris</h3>
+                        <h4>
+                            Bachelor of Computer and Information Sciences
+                            in Application Development
+                        </h4>
+                    </div>
+
+                    <span class="year">2024 – 2026</span>
+                </div>
+
+                <p>
+                    Pursuing a degree focused on application development,
+                    information systems and the application of technology
+                    to business and organisational needs.
+                </p>
+
+                <div class="tag-heading">University modules</div>
+
+                <div class="tags">
+                    <span class="tag module-tag">System Analysis & Design</span>
+                    <span class="tag module-tag">Information Systems</span>
+                    <span class="tag module-tag">Project Management</span>
+                    <span class="tag module-tag">IT Professional Practice</span>
+                    <span class="tag module-tag">Introduction to Research for ICT</span>
+                    <span class="tag module-tag">Cloud Development (Azure)</span>
+                    <span class="tag module-tag">Principles of Security</span>
+                    <span class="tag module-tag">Network Engineering</span>
+                    <span class="tag module-tag">Programming Logic & Design</span>
+                    <span class="tag module-tag">Mathematical Principles for Computer Science</span>
+                </div>
+
+                <p class="education-note">
+                    The modules shown are selected modules from my
+                    academic studies.
+                </p>
+            </div>
+
         </div>
+    </section>
 
-        <div class="project-card">
-            <h3>🕹️ GameScriptManager</h3>
-            <p>A project exploring game script organisation and management.</p>
-            <a href="https://github.com/Maseeha17/My-Projects/tree/main/GameScriptManager"
-               target="_blank">View Project →</a>
+    <!-- SKILLS -->
+    <section id="skills">
+        <div class="container">
+
+            <p class="section-label">What I bring</p>
+            <h2 class="section-title">Skills & Tools</h2>
+
+            <p class="section-intro">
+                A combination of technical knowledge, business
+                understanding, creative tools and organisational skills.
+            </p>
+
+            <div class="skills-grid">
+
+                <div class="skill-card reveal">
+                    <div class="skill-icon">💻</div>
+                    <h3>Technical Knowledge</h3>
+                    <p>
+                        HTML, CSS, JavaScript, C#, ASP.NET Core,
+                        React and application development.
+                    </p>
+                </div>
+
+                <div class="skill-card reveal">
+                    <div class="skill-icon">📊</div>
+                    <h3>Business & Analysis</h3>
+                    <p>
+                        Systems analysis, business processes,
+                        requirements understanding and problem-solving.
+                    </p>
+                </div>
+
+                <div class="skill-card reveal">
+                    <div class="skill-icon">🎨</div>
+                    <h3>Design & Planning</h3>
+                    <p>
+                        Figma, Canva and Miro for visual design,
+                        collaboration and planning.
+                    </p>
+                </div>
+
+                <div class="skill-card reveal">
+                    <div class="skill-icon">📁</div>
+                    <h3>Administration</h3>
+                    <p>
+                        Data capturing, order processing,
+                        invoicing and payment reconciliation.
+                    </p>
+                </div>
+
+                <div class="skill-card reveal">
+                    <div class="skill-icon">🗂️</div>
+                    <h3>Productivity Tools</h3>
+                    <p>
+                        Microsoft Word, Excel, PowerPoint
+                        and other Microsoft Office applications.
+                    </p>
+                </div>
+
+                <div class="skill-card reveal">
+                    <div class="skill-icon">🔗</div>
+                    <h3>Collaboration & Version Control</h3>
+                    <p>
+                        GitHub, project collaboration,
+                        documentation and version control.
+                    </p>
+                </div>
+
+            </div>
         </div>
+    </section>
 
-        <div class="project-card">
-            <h3>❓ Q&A Game</h3>
-            <p>An interactive question-and-answer game.</p>
-            <a href="https://github.com/Maseeha17/My-Projects/tree/main/Q%26A%20Game"
-               target="_blank">View Project →</a>
+    <!-- PROJECTS -->
+    <section class="projects" id="projects">
+        <div class="container">
+
+            <p class="section-label">My work & experience</p>
+            <h2 class="section-title">Projects Portfolio</h2>
+
+            <p class="section-intro">
+                A collection of academic and personal projects that
+                reflect my learning, creativity and practical
+                application of technology.
+            </p>
+
+            <div class="projects-grid">
+
+                <div class="project-card reveal">
+                    <div class="project-number">01</div>
+                    <h3>ChatBot</h3>
+                    <p>
+                        A chatbot project exploring conversational
+                        interaction and automated responses.
+                    </p>
+                    <a class="project-link"
+                       href="https://github.com/Maseeha17/My-Projects/tree/main/ChatBot"
+                       target="_blank" rel="noopener noreferrer">
+                        View Project ↗
+                    </a>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-number">02</div>
+                    <h3>Chatbot GUI</h3>
+                    <p>
+                        A graphical user interface project focused
+                        on providing a visual way to interact
+                        with a chatbot.
+                    </p>
+                    <a class="project-link"
+                       href="https://github.com/Maseeha17/My-Projects/tree/main/ChatbotGUI"
+                       target="_blank" rel="noopener noreferrer">
+                        View Project ↗
+                    </a>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-number">03</div>
+                    <h3>Daily Life Guess Game</h3>
+                    <p>
+                        A guessing game project based on everyday
+                        life concepts and user interaction.
+                    </p>
+                    <a class="project-link"
+                       href="https://github.com/Maseeha17/My-Projects/tree/main/DailyLifeGuessGame"
+                       target="_blank" rel="noopener noreferrer">
+                        View Project ↗
+                    </a>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-number">04</div>
+                    <h3>Game Script Manager</h3>
+                    <p>
+                        A project focused on organising and managing
+                        game-related scripts.
+                    </p>
+                    <a class="project-link"
+                       href="https://github.com/Maseeha17/My-Projects/tree/main/GameScriptManager"
+                       target="_blank" rel="noopener noreferrer">
+                        View Project ↗
+                    </a>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-number">05</div>
+                    <h3>Q&A Game</h3>
+                    <p>
+                        An interactive question-and-answer game
+                        designed around user participation.
+                    </p>
+                    <a class="project-link"
+                       href="https://github.com/Maseeha17/My-Projects/tree/main/Q%26A%20Game"
+                       target="_blank" rel="noopener noreferrer">
+                        View Project ↗
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="github-all">
+                <a href="https://github.com/Maseeha17"
+                   target="_blank" rel="noopener noreferrer"
+                   class="btn btn-gold">
+                    Explore My GitHub Profile ↗
+                </a>
+            </div>
+
         </div>
+    </section>
 
-    </div>
-</section>
+    <!-- CAREER INTERESTS -->
+    <section class="interests" id="interests">
+        <div class="container">
 
-<!-- CAREER INTERESTS -->
-<section class="interests">
-    <h2 class="section-title">Career <span>Interests</span></h2>
+            <p class="section-label">Where I see myself</p>
+            <h2 class="section-title">Professional Interests</h2>
 
-    <div class="skills">
-        <span class="skill">Business Analysis</span>
-        <span class="skill">Systems Analysis</span>
-        <span class="skill">IT Administration</span>
-        <span class="skill">Application Support</span>
-        <span class="skill">Information Systems</span>
-    </div>
-</section>
+            <p class="section-intro">
+                I am interested in opportunities where I can combine
+                my understanding of technology, business operations,
+                communication and problem-solving.
+            </p>
 
-<!-- CONTACT SECTION -->
-<section class="contact" id="contact">
-    <h2 class="section-title">Let's <span>Connect</span></h2>
+            <div class="interest-grid">
+                <div class="interest-card">Business Analysis</div>
+                <div class="interest-card">Systems Analysis</div>
+                <div class="interest-card">Application Support</div>
+                <div class="interest-card">IT Administration</div>
+                <div class="interest-card">Information Systems</div>
+                <div class="interest-card">Project Coordination</div>
+                <div class="interest-card">Business Operations</div>
+                <div class="interest-card">Technology & Innovation</div>
+            </div>
 
-    <p>I'd love to connect with industry professionals and
-       explore opportunities to grow within the IT industry.</p>
+        </div>
+    </section>
 
-    <p>📧 Email:
-        <a href="mailto:azizmaseeha717@gmail.com">
-            azizmaseeha717@gmail.com
-        </a>
-    </p>
+    <!-- CV -->
+    <section class="cv-section" id="cv">
+        <div class="container">
 
-    <p>📱 Phone: 072 737 7862</p>
+            <p class="section-label">My professional profile</p>
+            <h2 class="section-title">Curriculum Vitae</h2>
 
-    <p>💻 GitHub:
-        <a href="https://github.com/Maseeha17" target="_blank">
-            github.com/Maseeha17
-        </a>
-    </p>
-</section>
+            <div class="cv-card reveal">
 
-<footer>
-    <p>© 2026 Maseeha Aziz | Personal Digital Portfolio</p>
-    <p>Designed with purpose. Built with passion.</p>
-</footer>
+                <div>
+                    <h3>Want to know more about me?</h3>
+
+                    <p>
+                        My CV provides further information about my
+                        educational background, experience, skills
+                        and qualifications. You can view it online
+                        or download a copy below.
+                    </p>
+
+                    <p class="cv-note">
+                        My CV will be available here once I upload
+                        the PDF to my portfolio repository.
+                    </p>
+                </div>
+
+                <div class="cv-buttons">
+                    <a href="Maseeha_Aziz_CV.pdf"
+                       target="_blank" rel="noopener noreferrer"
+                       class="btn btn-gold">
+                        View My CV ↗
+                    </a>
+
+                    <a href="Maseeha_Aziz_CV.pdf"
+                       download
+                       class="btn"
+                       style="background: var(--green); color: white;">
+                        Download CV ↓
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <div class="container">
+
+            <p class="section-label">Let's connect</p>
+            <h2 class="section-title">Get in Touch</h2>
+
+            <p class="section-intro">
+                I am always open to connecting with professionals,
+                exploring opportunities and learning from others
+                in the technology and business fields.
+            </p>
+
+            <div class="contact-details">
+
+                <a class="contact-item"
+                   href="mailto:azizmaseeha717@gmail.com">
+                    ✉ azizmaseeha717@gmail.com
+                </a>
+
+                <a class="contact-item"
+                   href="tel:+27727377862">
+                    ☎ 072 737 7862
+                </a>
+
+                <a class="contact-item"
+                   href="https://github.com/Maseeha17"
+                   target="_blank" rel="noopener noreferrer">
+                    GitHub ↗
+                </a>
+
+            </div>
+
+            <a href="mailto:azizmaseeha717@gmail.com"
+               class="btn btn-gold">
+                Send Me an Email
+            </a>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>
+                © <span id="currentYear"></span> Maseeha Aziz.
+                Designed with purpose and passion.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile navigation menu
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        menuToggle.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
+
+            const isOpen = navLinks.classList.contains("active");
+            menuToggle.setAttribute("aria-expanded", isOpen);
+            menuToggle.textContent = isOpen ? "✕" : "☰";
+        });
+
+        // Close the mobile menu after selecting a link
+        document.querySelectorAll(".nav-links a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("active");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.textContent = "☰";
+            });
+        });
+
+        // Automatically display the current year
+        document.getElementById("currentYear").textContent =
+            new Date().getFullYear();
+
+        // Reveal sections when they enter the screen
+        const revealElements = document.querySelectorAll(".reveal");
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.12
+        });
+
+        revealElements.forEach(function (element) {
+            observer.observe(element);
+        });
+    </script>
 
 </body>
 </html>
